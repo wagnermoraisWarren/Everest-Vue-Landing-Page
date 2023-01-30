@@ -1,13 +1,34 @@
 <template>
   <div>
-    <h1>Teste</h1>
+    <Header />
+    <Banner />
+    <Destaques />
+    <Investir />
+    <Footer />
   </div>
 </template>
 
 <script>
+  import Header from '@/components/Header.vue';
+  import Banner from '@/components/Banner.vue';
+  import Destaques from '@/components/Destaques.vue';
+  import Investir from '@/components/Investir.vue';
+  import Footer from '@/components/Footer.vue'
+  export default {
+    name: 'Home',
 
+    data() {
+      return {
 
-export default {
-  name: 'Home',
-}
+      };
+    },
+
+    components: {
+      Header,
+      Banner,
+      Destaques,
+      Investir,
+      Footer
+    }
+  };
 </script>
