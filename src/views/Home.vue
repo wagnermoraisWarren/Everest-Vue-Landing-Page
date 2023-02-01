@@ -28,7 +28,7 @@
       Banner,
       Destaques,
       Investir,
-      Footer
+      Footer,
     }
   };
 </script>

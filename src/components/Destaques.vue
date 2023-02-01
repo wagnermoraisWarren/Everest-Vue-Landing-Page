@@ -10,7 +10,7 @@
                 <p>
                     Você decide, nós resolvemos. Na <span>Warren</span>, você tem diversas opções para investir seu dinheiro da melhor forma que achar necessário. Poderá criar sua carteira para uma viagem no final de ano, para comprar um novo carro, para um planejamento de vida, o céu é o limite!
                 </p>
-                <BotaoVermelho mensagem="Conheça Mais" link="https://warren.com.br/sobre/" />
+                <BotaoVermelho mensagem="Conheça Mais" url="https://warren.com.br/sobre/" />
             </div>
         </div>
         <div class="container">
@@ -25,7 +25,7 @@
                 <p>
                     O mercado financeiro é famoso pelos seus procedimentos burocráticos e complicados. Filas, telefonemas, entregas de pastas e mais pastas de documentos… O objetivo das fintechs é deixar tudo isso no passado. Como tudo é resolvido online, os processos para os clientes das fintechs são mais ágeis e menos burocráticos. Tudo é resolvido na hora — até mesmo a assinatura de contratos e entrega de documentos são digitalizados. 
                 </p>
-                <BotaoVermelho mensagem="Invista" link="https://warren.com.br/app/#/signup" />
+                <BotaoVermelho mensagem="Confira" url="https://warren.com.br/app/#/signup" />
             </div>
             <div class="s-img-box"></div>
         </div>
@@ -44,12 +44,16 @@
 </script>
 
 <style scoped>
+.wrapper {
+    margin: 0 auto;
+    max-width: 1800px;
+}
 
 .container {
     margin: 2rem 0;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-evenly;
     gap: 5rem;
 }
 
@@ -57,7 +61,7 @@
     margin: 1.5rem 0;
     text-align: center;
     font-size: 1.8rem;
-    color: rgba(0, 0, 0, .8);
+    color: rgba(0, 0, 0, 0.8);
 }
 
 .text-box p {
@@ -67,6 +71,9 @@
     font-size: 1.25rem;
 }
 
+.border {
+    border: 1px solid var(--main-magenta);
+}
 
 .f-img-box {
     padding: 15rem;
@@ -92,5 +99,4 @@ span {
     color: var(--main-magenta);
     font-weight: 700;
 }
-
 </style>

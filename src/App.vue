@@ -24,9 +24,8 @@
     --main-white: #F5F6FA;
   }
 
-  .wrapper {
-    margin: 0 auto;
-    max-width: 1400px;
+  html {
+    scroll-behavior: smooth;
   }
 
   * {

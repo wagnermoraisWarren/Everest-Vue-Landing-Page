@@ -1,7 +1,7 @@
 <template>
     <div>
         <button>
-            <a :href="{link}" target="_blank">
+            <a :href="url" target="_blank">
                 {{ mensagem }}
             </a>
         </button>
@@ -14,7 +14,7 @@
 
         props: {
             mensagem: String,
-            link: String
+            url: String
         }
     }
 </script>
@@ -38,6 +38,7 @@
 
     button:hover {
         background: #c80c3b;
+        width: 16rem;
         transition: 200ms;
     }
 

@@ -4,9 +4,7 @@
             <h2>Investir é sobre você</h2>
             <p>Comece a investir em poucos minutos. Descomplique.</p>
         </div>
-        <div class="button-box">
-            <BotaoPreto mensagem="Invista" />
-        </div>
+        <BotaoPreto mensagem="Invista" url="https://warren.com.br/carteiras/"/>
     </section>
 </template>
 
@@ -28,7 +26,8 @@
         justify-content: space-around;
         background: var(--main-magenta);
         padding: 5rem 0;
-        margin: 1.5rem 0;
+        margin-top: 1.5rem;
+        gap: 15rem;
     }
 
     h2 {
