@@ -80,7 +80,7 @@
     border: none;
     border-radius: 5px;
     box-shadow: 1px 2px 2px rgba(0, 0, 0, .8);
-    background-image: url('../assets/capa\ 2.png');
+    background-image: url('../../assets/capa\ 2.png');
     background-size: cover;
     background-position: center;
 }
@@ -90,7 +90,7 @@
     border: none;
     border-radius: 5px;
     box-shadow: 1px 2px 2px rgba(0, 0, 0, .8);
-    background-image: url('../assets/mancoffe.jpg');
+    background-image: url('../../assets/mancoffe.jpg');
     background-size: cover;
     background-position: center;
 }

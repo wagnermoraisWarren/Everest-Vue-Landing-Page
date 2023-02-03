@@ -27,7 +27,7 @@
         justify-content: center;
         gap: 1.5rem;
         height: 85vh;
-        background-image: linear-gradient(to right, rgb(0, 0, 0, .4), rgba(0, 0, 0, 0.3)), url('../assets/doors.jpg');
+        background-image: linear-gradient(to right, rgb(0, 0, 0, .4), rgba(0, 0, 0, 0.3)), url('../../assets/doors.jpg');
         background-size: cover;
         background-position: center;
     }
