@@ -22,6 +22,7 @@
     --main-magenta: #EE2E5D;
     --main-dark: #0F0F0F;
     --main-white: #F5F6FA;
+    --main-dark-opacity-08: #000000cc;
   }
 
   html {
