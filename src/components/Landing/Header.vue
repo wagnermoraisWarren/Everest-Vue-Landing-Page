@@ -29,11 +29,11 @@
                 </li>
             </ul>
         </nav>
-        <button>
-            <a href="https://warren.com.br/app/#/signup" target="_blank">
+        <router-link to="/register">
+            <button>
                 Abra sua Conta
-            </a>
-        </button>
+            </button>
+        </router-link>
     </header>
 </template>
 
@@ -173,18 +173,16 @@
     button {
         padding: 1rem 2rem;
         width: 13rem;
+        font-size: 1rem;
+        font-weight: 700;
+        color: var(--main-white);
         background: var(--main-dark);
         border: none;
         border-radius: 8px;
         transition: 200ms;
+        cursor: pointer;
     }
-
-    button a {
-        color: var(--main-white);
-        font-size: 1rem;
-        font-weight: 700;
-    }
-
+    
     button:hover {
         background: var(--main-magenta);
         width: 14rem;

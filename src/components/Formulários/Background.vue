@@ -12,7 +12,7 @@
 
 <style scoped>
     .background {
-        height: 95vh;
+        height: 100%;
         width: 30vw;
         background-image: url('@/assets/fernanda-background.jpg');
         background-position: center;

@@ -1,7 +1,7 @@
 <template>
     <section>
-        <!-- COMPONENTE DE WIZARD/STEPPER -->
         <div class="wrapper">
+            <Wizard />
             <div class="welcome">
                 <h1>Seja bem-vindo.</h1>
                 <p>
@@ -62,6 +62,7 @@
 </template>
 
 <script>
+    import Wizard from '@/components/Formulários/Wizard.vue';
     import BotaoVermelho from '@/components/Landing/BotaoVermelho.vue';
     import Background from '@/components/Formulários/Background.vue';
     export default {
@@ -69,7 +70,9 @@
 
         data() {
             return {
-
+                cpf: "",
+                phone: "",
+                date: ""
             }
         },
 
@@ -79,7 +82,8 @@
 
         components: {
             Background,
-            BotaoVermelho
+            BotaoVermelho,
+            Wizard
         }
     }
 </script>
@@ -146,7 +150,7 @@
     }
 
     p {
-        margin: 1rem 0;
+        margin: 1.5rem 0;
         font-size: 1rem;
         font-weight: 500;
         text-align: justify;
