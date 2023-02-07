@@ -172,7 +172,6 @@
 
     button {
         padding: 1rem 2rem;
-        width: 13rem;
         font-size: 1rem;
         font-weight: 700;
         color: var(--main-white);
@@ -185,7 +184,7 @@
     
     button:hover {
         background: var(--main-magenta);
-        width: 14rem;
+        padding: 1rem 3rem;
         transition: 200ms;
     }
 </style>
