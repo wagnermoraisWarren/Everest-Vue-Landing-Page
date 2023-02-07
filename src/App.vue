@@ -1,6 +1,9 @@
 <template>
   <div id="app">
-    <router-view />
+    <transition name="fade" mode="out-in"> <!-- COMPONENTE DE TRANSIÇÃO DE ROUTER -->
+      <router-view />
+    </transition>
+
   </div>
 </template>
 
@@ -31,5 +34,16 @@
     font-family: 'Poppins', sans-serif;
     list-style: none;
     text-decoration: none;
+  }
+/*
+  Estilização da Transição do router
+*/
+  .fade-enter, .fade-leave-to {
+    opacity: 0;
+    transform: translateX(-2em);       
+  }
+
+  .fade-enter-active, .fade-leave-active {
+    transition: all 200ms ease;
   }
 </style>
