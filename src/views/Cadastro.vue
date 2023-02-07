@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <main>
         <header>
             <h1>Formulário</h1>
             <button>
@@ -8,24 +8,28 @@
                 </router-link>
             </button>
         </header>
-        <main>
-            <div class="container">
-                <div class="form">
-                    <Wizard :steps="3" :currentStep="currentStep" />
-                    <div v-if="currentStep === 1">
-                        <Formulario @nextStep="nextStep" />
-                    </div>
-                    <div v-if="currentStep === 2">
-                        <Local @nextStep="nextStep" />
-                    </div>
-                    <div v-if="currentStep === 3">
-                        <CadastroFinalizado />
+        <div class="box">
+            <section>
+                <div class="container">
+                    <div class="form">
+                        <div class="stepper-box">
+                            <Wizard :steps="3" :currentStep="currentStep" />
+                        </div>
+                        <div v-if="currentStep === 1">
+                            <Formulario @nextStep="nextStep" />
+                        </div>
+                        <div v-if="currentStep === 2">
+                            <Local @nextStep="nextStep" />
+                        </div>
+                        <div v-if="currentStep === 3">
+                            <CadastroFinalizado />
+                        </div>
                     </div>
                 </div>
-            </div>
-        </main>
-        <Background />
-    </div>
+            </section>
+            <Background />
+        </div>
+    </main>
 </template>
 
 <script>
@@ -60,6 +64,18 @@
 </script>
 
 <style scoped>
+    .box {
+        display: flex;
+    }
+
+    .stepper-box {
+        margin: 2% 0 0 0;
+    }
+
+    section {
+        width: 70%;
+    }
+
     header {
         display: flex;
         align-items: center;
