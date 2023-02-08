@@ -1,6 +1,10 @@
 <template>
     <header>
-        <img src="https://warren.com.br/_nuxt/img/warren-logo-investimentos.462794d.svg" alt="Logo Warren">
+        <button class="logo">
+            <a href="https://warren.com.br" target="_blank">
+                <img src="https://warren.com.br/_nuxt/img/warren-logo-investimentos.462794d.svg" alt="Logo Warren">
+            </a>
+        </button>
         <nav id="nav">
             <ul>
                 <li
@@ -30,7 +34,7 @@
             </ul>
         </nav>
         <router-link to="/register">
-            <button>
+            <button class="register">
                 Abra sua Conta
             </button>
         </router-link>
@@ -170,7 +174,7 @@
         display: block;
     }
 
-    button {
+    .register  {
         padding: 1rem 2rem;
         font-size: 1rem;
         font-weight: 700;
@@ -182,9 +186,14 @@
         cursor: pointer;
     }
     
-    button:hover {
+    .register:hover {
         background: var(--main-magenta);
         padding: 1rem 3rem;
         transition: 200ms;
+    }
+
+    .logo {
+        background: transparent;
+        border: none;
     }
 </style>
