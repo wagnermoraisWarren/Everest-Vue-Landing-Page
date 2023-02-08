@@ -10,7 +10,7 @@
                     <div class="column">
                         <div class="input-box">
                             <label for="country">Estado</label>
-                            <input type="text" v-model="user.country">
+                            <input type="text" v-model="user.state">
                         </div>
                         <div class="input-box">
                             <label for="city">Cidade</label>
@@ -20,7 +20,7 @@
                     <div class="column">
                         <div class="input-box">
                             <label for="zipCode">CEP</label>
-                            <input type="text" v-model="user.zip">
+                            <input type="text" v-model="user.zip" v-mask="'#####-###'">
                         </div>
                         <div class="input-box">
                             <label for="address">Endereço</label>
@@ -46,7 +46,7 @@
         data() {
             return {
                 user: {
-                    country: "",
+                    state: "",
                     city: "",
                     zip: "",
                     address: "",
@@ -54,6 +54,93 @@
                 }
             };
         },
+
+        methods: {
+            nextStep() {
+                this.$emit("nextStep");
+            },
+            
+            nextForm() {
+                if (this.user.state.length < 3) {
+                    this.$toast.error("Estado informado não é válido. Por gentileza, verifique e tente novamente!", {
+                        position: "top-center",
+                        timeout: 2952,
+                        closeOnClick: true,
+                        pauseOnFocusLoss: false,
+                        pauseOnHover: false,
+                        draggable: false,
+                        draggablePercent: 0.38,
+                        showCloseButtonOnHover: true,
+                        hideProgressBar: true,
+                        closeButton: "button",
+                        icon: true,
+                        rtl: false
+                    });
+                } else if (this.user.city.length < 3) {
+                    this.$toast.error("Cidade informada não é válida. Por gentileza, verifique e tente novamente!", {
+                        position: "top-center",
+                        timeout: 2952,
+                        closeOnClick: true,
+                        pauseOnFocusLoss: false,
+                        pauseOnHover: false,
+                        draggable: false,
+                        draggablePercent: 0.38,
+                        showCloseButtonOnHover: true,
+                        hideProgressBar: true,
+                        closeButton: "button",
+                        icon: true,
+                        rtl: false
+                    });
+                } else if (this.user.zip.length < 9) {
+                    this.$toast.error("Cep informado não é válido. Por gentileza, verifique e tente novamente!", {
+                        position: "top-center",
+                        timeout: 2952,
+                        closeOnClick: true,
+                        pauseOnFocusLoss: false,
+                        pauseOnHover: false,
+                        draggable: false,
+                        draggablePercent: 0.38,
+                        showCloseButtonOnHover: true,
+                        hideProgressBar: true,
+                        closeButton: "button",
+                        icon: true,
+                        rtl: false
+                    });
+                } else if (this.user.address.length < 5) {
+                    this.$toast.error("Endereço informado não é válido. Por gentileza, verifique e tente novamente!", {
+                        position: "top-center",
+                        timeout: 2952,
+                        closeOnClick: true,
+                        pauseOnFocusLoss: false,
+                        pauseOnHover: false,
+                        draggable: false,
+                        draggablePercent: 0.38,
+                        showCloseButtonOnHover: true,
+                        hideProgressBar: true,
+                        closeButton: "button",
+                        icon: true,
+                        rtl: false
+                    });
+                } else if (this.user.number.length == "") {
+                    this.$toast.error("Número do local precisa ser preenchido. Por gentileza, verifique e tente novamente!", {
+                        position: "top-center",
+                        timeout: 2952,
+                        closeOnClick: true,
+                        pauseOnFocusLoss: false,
+                        pauseOnHover: false,
+                        draggable: false,
+                        draggablePercent: 0.38,
+                        showCloseButtonOnHover: true,
+                        hideProgressBar: true,
+                        closeButton: "button",
+                        icon: true,
+                        rtl: false
+                    });
+                } else {
+                    this.nextStep();
+                }
+            }
+        }
     }
 </script>
 

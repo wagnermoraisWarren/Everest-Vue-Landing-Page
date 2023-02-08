@@ -14,13 +14,15 @@
                         <input type="text" id="name" v-model="user.name">
                     </div>
                     <div class="input-columns">
-                        <div class="input-box">
+                        <div class="input-box email-area">
                             <label for="email">Email</label>
                             <input type="text" id="email" v-model="user.email">
+                            <img class="email-icon" src="@/assets/email.svg" alt="Email Icon">
                         </div>
-                        <div class="input-box">
+                        <div class="input-box email-area">
                             <label for="confirmEmail">Confirmar Email</label>
                             <input type="text" id="confirmEmail" v-model="user.confirmEmail">
+                            <img class="email-icon" src="@/assets/email.svg" alt="Email Icon">
                         </div>
                     </div>
                     <div class="input-columns">
@@ -35,7 +37,8 @@
                     </div>
                     <div class="input-date">
                         <label for="date">Data de Nascimento</label>
-                        <input type="text" id="date" v-model="user.birthDate" v-mask="'##/##/####'">
+                        <input type="text" id="date" v-model="user.birthDate" v-mask="'##/##/##'">
+                        <img src="@/assets/calendar.svg" alt="">
                     </div>
                 </form>
             </div>
@@ -163,7 +166,7 @@
                         icon: true,
                         rtl: false
                     });
-                } else if (this.user.birthDate.length < 10) {
+                } else if (this.user.birthDate.length < 8) {
                     this.$toast.error("Data de nascimento inserida inválida! Por gentileza, verifique e tente novamente!", {
                         position: "top-center",
                         timeout: 2952,
@@ -252,6 +255,21 @@
         margin: .80rem 0;
     }
 
+    .email-area {
+        position: relative;
+    }
+
+    .email-area input {
+        padding: 1rem 2.5rem;
+    }
+
+    .email-icon {
+        position: absolute;
+        top: 2.5rem;
+        left: .70rem;
+        width: 1.5rem;
+    }
+
     .input-date label {
         font-size: .80rem;
         margin-bottom: .45rem;
@@ -259,10 +277,17 @@
 
     .input-date input {
         display: flex;
-        padding: .50rem 1rem;
+        padding: .50rem 2.8rem;
         border: 1px solid #8c99b8;
         border-radius: 5px;
         outline: none;
+        position: relative;
+    }
+
+    .input-date img {
+        position: absolute;
+        left: 21.5%;
+        top: 62%;
     }
 
     .checkbox-area {
