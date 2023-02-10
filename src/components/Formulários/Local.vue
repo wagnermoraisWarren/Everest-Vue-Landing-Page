@@ -1,5 +1,5 @@
 <template>
-    <div class="teste">
+    <div class="container">
         <section>
             <div class="welcome">
                 <h2>Dados pessoais</h2>
@@ -145,15 +145,15 @@
 </script>
 
 <style scoped>
-    .teste {
+    .container {
         display: flex;
         flex-direction: column;
         align-items: center;
-        height: 90vh;
+        height: 86vh;
     }
 
     .welcome {
-        margin: 3rem auto;
+        margin: 1rem auto;
     }
 
     .column {
@@ -193,12 +193,12 @@
     h2 {
         font-size: 2.2rem;
         color: var(--main-dark-opacity-08);
-        margin-bottom: 2rem;
+        margin-bottom: 1rem;
     }
     
     p {
         text-align: justify;
-        max-width: 500px;
+        max-width: 570px;
     }
 
     span {
@@ -207,7 +207,7 @@
     }
     
     button {
-        margin-top: 5%;
+        margin: 1rem 0;
         padding: 1rem 3rem;
         background: var(--main-magenta);
         box-shadow: 0px 0px 5px rgba(0, 0, 0, .2);

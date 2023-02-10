@@ -113,7 +113,7 @@
     #nav > ul {
         display: flex;
         align-items: center;
-        gap: 6rem;
+        gap: 2.5rem;
     }
 
     #nav > ul > li > a {
@@ -175,8 +175,8 @@
     }
 
     .register  {
-        padding: 1rem 2rem;
-        font-size: 1rem;
+        padding: .80rem 1.5rem;
+        font-size: .90rem;
         font-weight: 700;
         color: var(--main-white);
         background: var(--main-dark);
@@ -188,7 +188,7 @@
     
     .register:hover {
         background: var(--main-magenta);
-        padding: 1rem 3rem;
+        padding: .80rem 1.7rem;
         transition: 200ms;
     }
 

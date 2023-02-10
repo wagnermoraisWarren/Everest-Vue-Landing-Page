@@ -29,7 +29,6 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 1rem;
   }
   
   .dot-active {
@@ -40,6 +39,7 @@
     border: 2px solid #fff;
     outline: 1px solid var(--main-magenta);
   }
+  
   .dot-inactive {
     width: 1rem;
     height: 1rem;
@@ -48,9 +48,10 @@
     border: 1px solid white;
     outline: 1px solid var(--main-magenta);
   }
+
   .line {
     height: 2px;
-    width: 14rem;
+    width: 16rem;
     background-color: var(--main-magenta);
     align-self: center;
   }
