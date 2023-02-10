@@ -37,8 +37,7 @@
                     </div>
                     <div class="input-date">
                         <label for="date">Data de Nascimento</label>
-                        <input type="text" id="date" v-model="user.birthDate" v-mask="'##/##/##'">
-                        <img src="@/assets/calendar.svg" alt="">
+                        <input type="date" id="date" v-model="user.birthDate">
                     </div>
                 </form>
             </div>
@@ -211,37 +210,46 @@
     }
 
     form {
-        width: 40%;
+        width: 60%;
     }
 
     .welcome {
         display: flex;
         flex-direction: column;
-        width: 40%;
+        width: 60%;
         margin: 0 auto;
     }
 
     .input-box {
         display: flex;
         flex-direction: column;
+        position: relative;
         width: 100%;
     }
 
     .input-box label {
+        padding: 0 .35rem;
+        margin-bottom: .45rem;
         font-size: .80rem;
         font-weight: 700;
+        background-color: #f5f5f5;
         color: rgba(0, 0, 0, .7);
+        top: -.50em;
+        left: 2em;
+        z-index: 1;
         text-transform: uppercase;
-        margin-bottom: .45rem;
+        position: absolute;
     }
 
     .input-box input {
-        padding: 1rem .50rem;
-        letter-spacing: 1px;
-        border: 1px solid #555c6d;
-        border-radius: 10px;
+        padding: .50rem .5rem;
+        background-color: #f5f5f5;
+        border: 1px solid rgba(0, 0, 0, 0.7);
+        border-radius: 5px;
         outline: none;
-        transition: 200ms;
+        letter-spacing: 1px;
+        line-height: 6ex;
+        position: relative;
     }
 
     input:hover {
@@ -255,39 +263,44 @@
         margin: .80rem 0;
     }
 
-    .email-area {
+    .email-area,
+    .input-date {
         position: relative;
     }
 
     .email-area input {
-        padding: 1rem 2.5rem;
+        padding: .50rem 2.5rem;
+        
     }
 
     .email-icon {
         position: absolute;
-        top: 2.5rem;
+        top: 1.1rem;
         left: .70rem;
         width: 1.5rem;
     }
 
     .input-date label {
-        font-size: .80rem;
-        margin-bottom: .45rem;
+        padding: 0 .35rem;
+        font-size: .70rem;
+        top: -.50em;
+        left: 1em;
+        z-index: 1;
+        background-color: #f5f5f5;
+        position: absolute;
     }
 
     .input-date input {
         display: flex;
-        padding: .50rem 2.8rem;
-        border: 1px solid #8c99b8;
+        padding: 0 .50rem;
+        width: 49%;
         border-radius: 5px;
         outline: none;
         position: relative;
-    }
-
-    .input-date img {
-        position: absolute;
-        left: 21.5%;
-        top: 62%;
+        line-height: 6ex;
+        background-color: #f5f5f5;
+        border: 1px solid rgba(0, 0, 0, 0.7);
+        position: relative;
     }
 
     .checkbox-area {
