@@ -50,7 +50,7 @@
         methods: {
             nextStep() {
                 this.currentStep += 1;
-            }
+            },
         },
 
         components: {

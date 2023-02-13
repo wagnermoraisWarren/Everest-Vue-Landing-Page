@@ -34,32 +34,34 @@
                 </form>
             </div>
             <button type="button" @click="nextForm()">Continuar</button>
+            <Modal 
+                v-show="isModal"
+                @closeModal="isModal = false"
+            />
         </section>
     </div>
 
 </template>
 
 <script>
+    import Modal from '../Modal/Modal.vue';
     export default {
         name: 'Local',
 
         data() {
             return {
+                isModal: false,
                 user: {
                     state: "",
                     city: "",
                     zip: "",
                     address: "",
                     number: ""
-                }
+                },
             };
         },
 
-        methods: {
-            nextStep() {
-                this.$emit("nextStep");
-            },
-            
+        methods: {            
             nextForm() {
                 if (this.user.state.length < 3) {
                     this.$toast.error("Estado informado não é válido. Por gentileza, verifique e tente novamente!", {
@@ -137,9 +139,17 @@
                         rtl: false
                     });
                 } else {
-                    this.nextStep();
+                    this.openModal();
                 }
-            }
+            },
+
+            openModal() {
+                this.isModal = true;
+            },
+        },
+
+        components: {
+            Modal
         }
     }
 </script>

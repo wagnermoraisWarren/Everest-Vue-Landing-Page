@@ -23,6 +23,21 @@ Vue.use(Toast, {
   }
 });
 
+Vue.component('font-awesome-icon', FontAwesomeIcon);
+
+/* import the fontawesome core */
+import { library } from '@fortawesome/fontawesome-svg-core'
+
+/* import font awesome icon component */
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+
+/* import specific icons */
+import { faClose, faEnvelope } from '@fortawesome/free-solid-svg-icons'
+import { faWhatsapp } from '@fortawesome/free-brands-svg-icons'
+
+/* add icons to the library */
+library.add(faWhatsapp, faEnvelope, faClose)
+
 new Vue({
   router,
   render: h => h(App)

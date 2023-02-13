@@ -79,16 +79,11 @@
                     date: "",
                     emailSMS: false,
                     whatsApp: false
-                }
-
+                },
             }
         },
 
         methods: {
-            nextStep() {
-                this.$emit("nextStep");
-            },
-
             nextForm() {
                 if (this.user.name.length < 7) {
                     this.$toast.error("Nome informado não é válido. Por gentileza, verifique e tente novamente!", {
@@ -198,8 +193,12 @@
                 } else {
                     this.nextStep();
                 }
-            }
-        },
+            },
+            
+            nextStep() {
+                this.$emit("nextStep");
+            },
+        }
     }
 </script>
 
