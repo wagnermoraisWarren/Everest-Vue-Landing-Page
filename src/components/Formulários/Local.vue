@@ -9,34 +9,36 @@
                 <form>
                     <div class="column">
                         <div class="input-box">
-                            <label for="country">Estado</label>
-                            <input type="text" v-model="user.state">
+                            <label for="country">País</label>
+                            <input type="text" v-model="country">
                         </div>
                         <div class="input-box">
                             <label for="city">Cidade</label>
-                            <input type="text" v-model="user.city">
+                            <input type="text" v-model="city">
                         </div>
                     </div>
                     <div class="column">
                         <div class="input-box">
                             <label for="zipCode">CEP</label>
-                            <input type="text" v-model="user.zip" v-mask="'#####-###'">
+                            <input type="text" v-model="zip" v-mask="'#####-###'">
                         </div>
                         <div class="input-box">
                             <label for="address">Endereço</label>
-                            <input type="text" v-model="user.address">
+                            <input type="text" v-model="address">
                         </div>
                     </div>
                     <div class="input-box">
                         <label for="number">Número</label>
-                        <input type="text" v-model="user.number">
+                        <input type="text" v-model="number">
                     </div>
                 </form>
             </div>
             <button type="button" @click="nextForm()">Continuar</button>
-            <Modal 
+            <Modal
                 v-show="isModal"
                 @closeModal="isModal = false"
+                @nextStep="nextStep"
+                :userData="userData"
             />
         </section>
     </div>
@@ -51,19 +53,32 @@
         data() {
             return {
                 isModal: false,
-                user: {
-                    state: "",
-                    city: "",
-                    zip: "",
-                    address: "",
-                    number: ""
-                },
-            };
+                country: "",
+                city: "",
+                zip: "",
+                address: "",
+                number: "",
+                localData: [],
+            }
+        },
+
+        computed: {
+                userData: {
+                    get() {
+                        return {
+                                country: this.country || "",
+                                city: this.city || "",
+                                zip: this.zip || "",
+                                address: this.address || "",
+                                number: this.number || ""
+                        }
+                    }
+                }
         },
 
         methods: {            
             nextForm() {
-                if (this.user.state.length < 3) {
+                if (this.country.length < 3) {
                     this.$toast.error("Estado informado não é válido. Por gentileza, verifique e tente novamente!", {
                         position: "top-center",
                         timeout: 2952,
@@ -78,7 +93,7 @@
                         icon: true,
                         rtl: false
                     });
-                } else if (this.user.city.length < 3) {
+                } else if (this.city.length < 3) {
                     this.$toast.error("Cidade informada não é válida. Por gentileza, verifique e tente novamente!", {
                         position: "top-center",
                         timeout: 2952,
@@ -93,7 +108,7 @@
                         icon: true,
                         rtl: false
                     });
-                } else if (this.user.zip.length < 9) {
+                } else if (this.zip.length < 9) {
                     this.$toast.error("Cep informado não é válido. Por gentileza, verifique e tente novamente!", {
                         position: "top-center",
                         timeout: 2952,
@@ -108,7 +123,7 @@
                         icon: true,
                         rtl: false
                     });
-                } else if (this.user.address.length < 5) {
+                } else if (this.address.length < 5) {
                     this.$toast.error("Endereço informado não é válido. Por gentileza, verifique e tente novamente!", {
                         position: "top-center",
                         timeout: 2952,
@@ -123,7 +138,7 @@
                         icon: true,
                         rtl: false
                     });
-                } else if (this.user.number.length == "") {
+                } else if (this.number.length == "") {
                     this.$toast.error("Número do local precisa ser preenchido. Por gentileza, verifique e tente novamente!", {
                         position: "top-center",
                         timeout: 2952,
@@ -139,6 +154,12 @@
                         rtl: false
                     });
                 } else {
+                    this.localData.country = this.country
+                    this.localData.city = this.city
+                    this.localData.zip = this.zip
+                    this.localData.address = this.address
+                    this.localData.number = this.number
+                    console.log(this.localData)
                     this.openModal();
                 }
             },
@@ -146,6 +167,10 @@
             openModal() {
                 this.isModal = true;
             },
+
+            nextStep() {
+                this.$emit("nextStep");
+            }
         },
 
         components: {

@@ -7,25 +7,25 @@
             <div class="contact-column">
                 <div class="contacts">
                     <h4>País</h4>
-                    <p>Brasil</p>
+                    <p> {{ userData.country }} </p>
                 </div>
                 <div class="contacts">
                     <h4>Cidade</h4>
-                    <p>Porto Alegre</p>
+                    <p> {{ userData.city }} </p>
                 </div>
                 <div class="contacts">
                     <h4>CEP</h4>
-                    <p>91.755-220</p>
+                    <p> {{ userData.zip }} </p>
                 </div>
             </div>
             <div class="contact-column">
                 <div class="contacts">
                     <h4>Endereço</h4>
-                    <p>Rua Nova Ipanema</p>
+                    <p> {{ userData.address }} </p>
                 </div>
                 <div class="contacts">
                     <h4>Número</h4>
-                    <p>64</p>
+                    <p> {{ userData.number }} </p>
                 </div>
             </div>
         </div>
@@ -35,6 +35,19 @@
 <script>
     export default {
         name: 'Pessoal',
+
+        data() {
+            return {
+                localData: []
+            }
+        },
+
+        props: {
+            userData: {
+                type: Object,
+                required: true
+            }
+        }
     }
 </script>
 

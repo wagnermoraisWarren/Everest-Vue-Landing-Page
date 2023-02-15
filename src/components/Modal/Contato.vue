@@ -7,28 +7,34 @@
             <div class="contact-column">
                 <div class="contacts">
                     <h4>CPF</h4>
-                    <p>880.402.240-04</p>
+                    <p> {{ contatoData.cpf }} </p>
                 </div>
                 <div class="contacts">
                     <h4>Nome</h4>
-                    <p class="name">Wagner Luiz Marques de Morais</p>
+                    <p class="name"> {{ contatoData.name }} </p>
                 </div>
                 <div class="contacts">
                     <h4>Nascimento</h4>
-                    <p>12/ABR/2000</p>
+                    <p> {{ contatoData.birthDate }} </p>
                 </div>
             </div>
             <div class="contact-column">
                 <div class="contacts">
                     <h4>Celular</h4>
-                    <p>(51) 9.9594-3232</p>
+                    <p> {{ contatoData.phone }} </p>
                 </div>
                 <div class="contacts-icon">
                     <h4>Contato</h4>
                     <div class="icon-box">
-                        <font-awesome-icon class="fa-2x" icon="fa-brands fa-whatsapp" v-if="isWhatsapp"/>
-                        <font-awesome-icon class="fa-2x" icon="fa-solid fa-envelope" v-else/>
-                        <span>WhatsApp</span>
+                        <div v-if="contatoData.whatsApp">
+                            <font-awesome-icon class="fa-2x" icon="fa-brands fa-whatsapp"/>
+                            <span>WhatsApp</span>
+                        </div>
+                        <div v-if="contatoData.emailSMS">
+                            <font-awesome-icon class="fa-2x" icon="fa-solid fa-envelope"/>
+                            <span v-if="contatoData.emailSMS">Email-SMS</span>
+                        </div>
+
                     </div>
                 </div>
             </div>
@@ -40,11 +46,20 @@
     export default {
         name:'Contato',
 
-        data() {
-            return {
-                isWhatsapp: true,
+        computed: {
+            contatoData: {
+                get() {
+                    return JSON.parse(localStorage.getItem("contato"));
+                }
             }
-        }
+        },
+
+        // props: {
+        //     userData: {
+        //         type: Object,
+        //         required: true
+        //     }
+        // }
     }
 </script>
 

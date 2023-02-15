@@ -11,33 +11,33 @@
                 <form>
                     <div class="input-box">
                         <label for="name">Nome Completo</label>
-                        <input type="text" id="name" v-model="user.name">
+                        <input type="text" id="name" v-model="name">
                     </div>
                     <div class="input-columns">
                         <div class="input-box email-area">
                             <label for="email">Email</label>
-                            <input type="text" id="email" v-model="user.email">
+                            <input type="text" id="email" v-model="email">
                             <img class="email-icon" src="@/assets/email.svg" alt="Email Icon">
                         </div>
                         <div class="input-box email-area">
                             <label for="confirmEmail">Confirmar Email</label>
-                            <input type="text" id="confirmEmail" v-model="user.confirmEmail">
+                            <input type="text" id="confirmEmail" v-model="confirmEmail">
                             <img class="email-icon" src="@/assets/email.svg" alt="Email Icon">
                         </div>
                     </div>
                     <div class="input-columns">
                         <div class="input-box">
                             <label for="cpf">Cpf</label>
-                            <input type="text" id="cpf" v-model="user.cpf" v-mask="'###.###.###-##'">
+                            <input type="text" id="cpf" v-model="cpf" v-mask="'###.###.###-##'">
                         </div>
                         <div class="input-box">
                             <label for="phone">Celular</label>
-                            <input type="text" id="phone" v-model="user.phone" v-mask="'(##) #.####-####'">
+                            <input type="text" id="phone" v-model="phone" v-mask="'(##) #.####-####'">
                         </div>
                     </div>
                     <div class="input-date">
                         <label for="date">Data de Nascimento</label>
-                        <input type="date" id="date" v-model="user.birthDate">
+                        <input type="date" id="date" v-model="birthDate">
                     </div>
                 </form>
             </div>
@@ -46,12 +46,12 @@
                     Seu cadastro está quase finalizado! Agora, por onde você gostaria que entrassemos em contato para trazer novidades sobre seus investimentos?
                 </p>
                 <div class="checkbox-area">
-                    <input type="checkbox" name="checkEmail" v-model="user.emailSMS">
+                    <input type="checkbox" name="checkEmail" v-model="emailSMS">
                     <label for="checkEmail"> Email e SMS </label>
                   </div>
           
                   <div class="checkbox-area">
-                    <input type="checkbox" name="checkWhats" v-model="user.whatsApp">
+                    <input type="checkbox" name="checkWhats" v-model="whatsApp">
                     <label for="checkWhats"> WhatsApp </label>
                   </div>
                   <p>
@@ -70,22 +70,38 @@
 
         data() {
             return {
-                user: {
-                    name: "",
-                    email: "",
-                    confirmEmail: "",
-                    cpf: "",
-                    phone: "",
-                    date: "",
-                    emailSMS: false,
-                    whatsApp: false
-                },
+                name: "",
+                email: "",
+                confirmEmail: "",
+                cpf: "",
+                phone: "",
+                birthDate: "",
+                emailSMS: false,
+                whatsApp: false,
+                contactData: {}
             }
         },
 
+        // computed: {
+        //         userData: {
+        //             get() {
+        //                 return {
+        //                         name: this.name || "",
+        //                         email: this.email || "",
+        //                         confirmEmail: this.confirmEmail || "",
+        //                         cpf: this.cpf || "",
+        //                         phone: this.phone || "",
+        //                         birthDate: this.birthDate || "",
+        //                         emailSMS: this.emailSMS || false,
+        //                         whatsApp: this.whatsApp || false
+        //                 }
+        //             }
+        //         }
+        // },
+
         methods: {
             nextForm() {
-                if (this.user.name.length < 7) {
+                if (this.name.length < 7) {
                     this.$toast.error("Nome informado não é válido. Por gentileza, verifique e tente novamente!", {
                         position: "top-center",
                         timeout: 2952,
@@ -100,7 +116,7 @@
                         icon: true,
                         rtl: false
                     });
-                } else if (this.user.email.length < 5) {
+                } else if (this.email.length < 5) {
                     this.$toast.error("E-mail inserido inválido! Por gentileza, verifique e tente novamente!", {
                         position: "top-center",
                         timeout: 2952,
@@ -115,7 +131,7 @@
                         icon: true,
                         rtl: false
                     });
-                } else if (this.user.confirmEmail !== this.user.email) {
+                } else if (this.confirmEmail !== this.email) {
                     this.$toast.error("E-mail inserido não coincide. Por gentileza, verifique e tente novamente!", {
                         position: "top-center",
                         timeout: 2952,
@@ -130,7 +146,7 @@
                         icon: true,
                         rtl: false
                     });
-                } else if (this.user.cpf.length < 14) {
+                } else if (this.cpf.length < 14) {
                     this.$toast.error("CPF inserido inválido! Por gentileza, verifique e tente novamente!", {
                         position: "top-center",
                         timeout: 2952,
@@ -145,7 +161,7 @@
                         icon: true,
                         rtl: false
                     });
-                } else if (this.user.phone.length < 16) {
+                } else if (this.phone.length < 16) {
                     this.$toast.error("Número de celular inserido inválido! Por gentileza, verifique e tente novamente!", {
                         position: "top-center",
                         timeout: 2952,
@@ -160,7 +176,7 @@
                         icon: true,
                         rtl: false
                     });
-                } else if (this.user.birthDate.length < 8) {
+                } else if (this.birthDate.length < 8) {
                     this.$toast.error("Data de nascimento inserida inválida! Por gentileza, verifique e tente novamente!", {
                         position: "top-center",
                         timeout: 2952,
@@ -175,7 +191,7 @@
                         icon: true,
                         rtl: false
                     });
-                } else if (!this.user.emailSMS && !this.user.whatsApp) {
+                } else if (!this.emailSMS && !this.whatsApp) {
                     this.$toast.error("Selecione no mínimo um meio de contato!", {
                         position: "top-center",
                         timeout: 2952,
@@ -196,6 +212,16 @@
             },
             
             nextStep() {
+                this.contactData.name = this.name
+                this.contactData.email = this.email
+                this.contactData.confirmEmail = this.confirmEmail
+                this.contactData.cpf = this.cpf
+                this.contactData.phone = this.phone
+                this.contactData.birthDate = this.birthDate
+                this.contactData.emailSMS = this.emailSMS
+                this.contactData.whatsApp = this.whatsApp
+                console.log(this.contactData)
+                localStorage.setItem("contato", JSON.stringify(this.contactData))
                 this.$emit("nextStep");
             },
         }

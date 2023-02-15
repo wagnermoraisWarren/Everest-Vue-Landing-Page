@@ -58,7 +58,7 @@
             Local,
             CadastroFinalizado,
             Background,
-            Wizard
+            Wizard,
         }
     }
 </script>

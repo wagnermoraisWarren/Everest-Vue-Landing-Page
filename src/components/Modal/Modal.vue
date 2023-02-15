@@ -10,8 +10,8 @@
             <p class="main-p">Analise e confirme os dados preenchidos no cadastro.</p>
             <button class="contact-button" @click="contactModal()">Contato</button>
             <button class="self-button" @click="pessoalModal()">Pessoal</button>
-            <Pessoal v-if="isPessoal"/>
-            <Contato v-else/>
+            <Pessoal :userData="userData" v-if="isPessoal"/>
+            <Contato  v-else/>
         </div>
         <div class="button-area">
             <button class="cancel-button" @click="closeModal()">Cancelar</button>
@@ -47,7 +47,14 @@
 
             nextStep() {
                 this.$emit("nextStep");
-            },
+            }
+        },
+
+        props: {
+            userData: {
+                type: Object,
+                required: true
+            }
         },
 
         components: {
