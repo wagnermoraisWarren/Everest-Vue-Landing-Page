@@ -82,23 +82,6 @@
             }
         },
 
-        // computed: {
-        //         userData: {
-        //             get() {
-        //                 return {
-        //                         name: this.name || "",
-        //                         email: this.email || "",
-        //                         confirmEmail: this.confirmEmail || "",
-        //                         cpf: this.cpf || "",
-        //                         phone: this.phone || "",
-        //                         birthDate: this.birthDate || "",
-        //                         emailSMS: this.emailSMS || false,
-        //                         whatsApp: this.whatsApp || false
-        //                 }
-        //             }
-        //         }
-        // },
-
         methods: {
             nextForm() {
                 if (this.name.length < 7) {
@@ -229,6 +212,10 @@
 </script>
 
 <style scoped>
+    .main {
+        height: 90vh;
+    }
+    
     .form {
         display: flex;
         justify-content: center;

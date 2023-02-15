@@ -16,10 +16,12 @@
         type: Number,
         required: true,
       },
+
       currentStep: {
         type: Number,
         required: false,
       },
+      
     },
   };
   </script>

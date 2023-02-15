@@ -74,7 +74,6 @@
         border: none;
         border-radius: 5px;
         box-shadow: 0px 0px 1px 1100px #433d3d87;
-        width: 50%;
         padding: 1rem;
     }
 
@@ -90,7 +89,7 @@
 
     .close-icon {
         position: absolute;
-        right: 2rem;
+        right: 1rem;
         background-color: transparent;
         border: none;
         cursor: pointer;
@@ -127,12 +126,10 @@
 
     .contact-button:hover {
         background: #3d3d42;
-        padding: .50rem 1.1rem;
     }
 
     .self-button:hover {
         background: #e8c1ca;
-        padding: .50rem 1.1rem;
     }
 
     .button-area {
@@ -151,7 +148,7 @@
         font-size: 1rem;
         font-weight: 700;
         cursor: pointer;
-        transition: 100ms;
+        transition: 400ms;
     }
 
     .cancel-button {
@@ -166,11 +163,9 @@
 
     .cancel-button:hover {
         background: #e8c1ca;
-        padding: 1rem 2.5rem;
     }
 
     .confirm-button:hover {
-        background: #d72350;
-        padding: 1rem 2.5rem;
+        background: #4e0618;
     }
 </style>

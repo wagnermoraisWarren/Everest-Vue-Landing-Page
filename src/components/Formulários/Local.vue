@@ -63,17 +63,17 @@
         },
 
         computed: {
-                userData: {
-                    get() {
-                        return {
-                                country: this.country || "",
-                                city: this.city || "",
-                                zip: this.zip || "",
-                                address: this.address || "",
-                                number: this.number || ""
-                        }
+            userData: {
+                get() {
+                    return {
+                        country: this.country || "",
+                        city: this.city || "",
+                        zip: this.zip || "",
+                        address: this.address || "",
+                        number: this.number || ""
                     }
                 }
+            }
         },
 
         methods: {            
@@ -184,7 +184,7 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        height: 86vh;
+        height: 90vh;
     }
 
     .welcome {

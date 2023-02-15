@@ -54,7 +54,7 @@
 <style scoped>
 .contact-data {
     margin-top: 1rem;
-    padding: 1rem 2rem;
+    padding: .60rem 2.3rem;
     border: 2px solid #d1ebe6;
     border-radius: 5px;
 }
@@ -67,7 +67,7 @@
 
 .contact-columns {
     display: flex;
-    gap: 10rem;
+    gap: 12rem;
 }
 
 .contacts {

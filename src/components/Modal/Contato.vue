@@ -26,15 +26,14 @@
                 <div class="contacts-icon">
                     <h4>Contato</h4>
                     <div class="icon-box">
-                        <div v-if="contatoData.whatsApp">
+                        <div v-if="contatoData.whatsApp" class="icon-container">
                             <font-awesome-icon class="fa-2x" icon="fa-brands fa-whatsapp"/>
-                            <span>WhatsApp</span>
+                            <p>WhatsApp</p>
                         </div>
-                        <div v-if="contatoData.emailSMS">
+                        <div v-if="contatoData.emailSMS" class=icon-container>
                             <font-awesome-icon class="fa-2x" icon="fa-solid fa-envelope"/>
-                            <span v-if="contatoData.emailSMS">Email-SMS</span>
+                            <p v-if="contatoData.emailSMS">Email-SMS</p>
                         </div>
-
                     </div>
                 </div>
             </div>
@@ -53,13 +52,6 @@
                 }
             }
         },
-
-        // props: {
-        //     userData: {
-        //         type: Object,
-        //         required: true
-        //     }
-        // }
     }
 </script>
 
@@ -79,7 +71,7 @@
 
 .contact-columns {
     display: flex;
-    gap: 3rem;
+    gap: 5rem;
 }
 
 .contacts {
@@ -96,15 +88,21 @@
     font-weight: 700;
 }
 
-.contacts-icon span {
+.contacts-icon p {
     font-weight: 700;
     font-size: 1rem;
 }
 
 .icon-box {
     display: flex;
-    align-items: center;
+    flex-direction: column;
     gap: .50rem;
+}
+
+.icon-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .name {
