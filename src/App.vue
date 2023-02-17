@@ -23,8 +23,10 @@
     --main-dark-opacity-08: #000000cc;
   }
 
-  html {
+  html,
+  body {
     scroll-behavior: smooth;
+    height: 100%
   }
 
   * {

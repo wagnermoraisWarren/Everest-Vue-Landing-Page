@@ -213,7 +213,7 @@
 
 <style scoped>
     .main {
-        height: 90vh;
+        height: 100%;
     }
     
     .form {
